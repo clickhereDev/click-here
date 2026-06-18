@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { MessageCircle, X as XIcon } from 'lucide-react'
 import { useApp } from '../context/AppContext'
 
+const WHATSAPP_NUMBER = '201128947886'
+
 export default function FloatingWhatsApp() {
   const { t, language } = useApp()
   const [visible, setVisible] = useState(false)
@@ -15,12 +17,7 @@ export default function FloatingWhatsApp() {
   if (dismissed) return null
 
   const handleClick = () => {
-    const el = document.getElementById('contact')
-    if (el) {
-      const offset = 80
-      const pos = el.getBoundingClientRect().top + window.scrollY - offset
-      window.scrollTo({ top: pos, behavior: 'smooth' })
-    }
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}`, '_blank')
   }
 
   return (

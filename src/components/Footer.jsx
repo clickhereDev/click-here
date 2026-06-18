@@ -1,4 +1,4 @@
-import { MessageCircle, Camera, Music2, ArrowUp, MousePointerClick } from 'lucide-react'
+import { Facebook, MessageCircle, ArrowUp, MousePointerClick } from 'lucide-react'
 import { useApp } from '../context/AppContext'
 
 const quickLinkKeys = [
@@ -11,9 +11,8 @@ const quickLinkKeys = [
 ]
 
 const socialLinks = [
-  { icon: MessageCircle, href: '#', key: 'footer.social1' },
-  { icon: Camera, href: '#', key: 'footer.social2' },
-  { icon: Music2, href: '#', key: 'footer.social3' },
+  { icon: Facebook, href: 'https://www.facebook.com/share/18ky6jjk4t/?mibextid=wwXIfr', key: 'footer.social1' },
+  { icon: MessageCircle, href: 'https://wa.me/201128947886', key: 'whatsapp.text' },
 ]
 
 export default function Footer({ onNavClick }) {
@@ -82,8 +81,8 @@ export default function Footer({ onNavClick }) {
 
           <div className={`text-center ${language === 'ar' ? 'sm:text-right' : 'sm:text-left'}`}>
             <h3 className="text-heading font-bold text-lg mb-4">{t('footer.contact')}</h3>
-            <p className="text-dim text-sm mb-2">info@clickhere.com</p>
-            <p className="text-dim text-sm">+966 50 000 0000</p>
+            <p className="text-dim text-sm mb-2">clickk.heere@gmail.com</p>
+            <p className="text-dim text-sm">+20 11 28947886</p>
           </div>
         </div>
 
