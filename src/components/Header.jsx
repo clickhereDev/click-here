@@ -26,11 +26,10 @@ export default function Header({ onNavClick }) {
           onClick={(e) => { onNavClick(e, 'hero'); setIsOpen(false) }}
           className="flex items-center gap-2 text-xl sm:text-2xl font-bold shrink-0"
         >
-          <span className="bg-primary rounded-lg p-1.5 sm:p-2 flex items-center justify-center">
-            <MousePointerClick size={18} className="text-white" />
-          </span>
-          <span className="text-primary">Click</span>
-          <span className="text-heading">Here</span>
+          
+          <div className="w-[80px] aspect-[1200/770] shrink-0">
+            <img src="/logo2.svg" alt="Click Here" className="w-full h-full" />
+          </div>
         </a>
 
         <button

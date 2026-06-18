@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Send, Phone, User, BookOpen, CheckCircle } from 'lucide-react'
 import { useApp } from '../context/AppContext'
+import { supabase } from '../utils/supabase'
 
 const fieldKeys = [
   { value: '', key: 'form.field.placeholder' },
@@ -19,12 +20,19 @@ export default function LeadForm() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     if (formData.name && formData.phone && formData.field) {
-      setSubmitted(true)
-      setFormData({ name: '', phone: '', field: '' })
-      setTimeout(() => setSubmitted(false), 5000)
+      const { error } = await supabase.from('leads').insert({
+        name: formData.name,
+        phone: formData.phone,
+        field: formData.field,
+      })
+      if (!error) {
+        setSubmitted(true)
+        setFormData({ name: '', phone: '', field: '' })
+        setTimeout(() => setSubmitted(false), 5000)
+      }
     }
   }
 
