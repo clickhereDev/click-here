@@ -1,4 +1,4 @@
-import { Facebook, MessageCircle, ArrowUp, MousePointerClick } from 'lucide-react'
+import { ExternalLink, MessageCircle, ArrowUp, MousePointerClick } from 'lucide-react'
 import { useApp } from '../context/AppContext'
 
 const quickLinkKeys = [
@@ -11,7 +11,7 @@ const quickLinkKeys = [
 ]
 
 const socialLinks = [
-  { icon: Facebook, href: 'https://www.facebook.com/share/18ky6jjk4t/?mibextid=wwXIfr', key: 'footer.social1' },
+  { icon: ExternalLink, href: 'https://www.facebook.com/share/18ky6jjk4t/?mibextid=wwXIfr', key: 'footer.social1' },
   { icon: MessageCircle, href: 'https://wa.me/201128947886', key: 'whatsapp.text' },
 ]
 
